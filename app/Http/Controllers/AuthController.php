@@ -34,7 +34,15 @@ class AuthController extends Controller
                 return redirect('/login');
             }
 
-            //return redirect()->intended('dashboard');
+            $request->session()->regenerate();
+            if (Auth::user()->role_id == 1) {
+                return redirect('dashboard');
+            }
+
+            if (Auth::user()->role_id == 2) {
+                return redirect('profile');
+            }
+
         }
         Session::flash('status', 'failed');
         Session::flash('message', 'Login Invalid');
