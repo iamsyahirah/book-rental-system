@@ -31,6 +31,11 @@ class AuthController extends Controller
 
             // check status = active
             if (Auth::user()->status != 'active') {
+                // walaupun sudah register, tapi tak active, kena logout
+                Auth::logout();
+                $request->session()->invalidate();
+                $request->session()->regenerateToken();
+
                 Session::flash('status', 'failed');
                 Session::flash('message', 'Your account is not active yet. Please contact admin.');
                 return redirect('/login');
@@ -53,7 +58,6 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
-
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
