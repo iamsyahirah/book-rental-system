@@ -16,6 +16,19 @@
       color: #fff;
     }
 
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      padding: 15px;
+    }
+
+    .sidebar a {
+      color: #fff;
+      text-decoration: none; 
+    }
+
     .content {
       background: #f3f7ff;
     }
@@ -35,7 +48,19 @@
   <div class="body-content h-100">
     <div class="row g-0 h-100">
       <div class="sidebar col-2">
-        gggg
+        <ul>
+          @if (Auth::user()->role_id == 1)
+          <li>Dashboard</li>
+          <li>Books</li>
+          <li>Categories</li>
+          <li>Users</li>
+          <li>Rent Log</li>
+          <li>Logout</li>
+          @else
+           <li>Profile</li>
+          <li>Logout</li>
+          @endif
+        </ul>
       </div>
       <div class="content p-5 col-10">
          @yield('content')
