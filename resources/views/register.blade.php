@@ -25,9 +25,13 @@
 </style>
 <body>
      <div class="main d-flex flex-column justify-content-center align-items-center">
-       @if (session('status'))
-    <div class="alert alert-danger">
-        {{ session('message')}}
+       @if ($errors->any())
+    <div class="alert alert-danger" style="width:500px">
+     <ul>
+        @foreach ($errors->all() as $error)
+        <li>{{ $error }}</li>
+        @endforeach
+     </ul>
     </div>
        @endif
         <div class="register-box">
@@ -35,19 +39,19 @@
                 @csrf
                 <div>
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" name="username" id="username" class="form-control" required>
+                    <input type="text" name="username" id="username" class="form-control">
                 </div>
                 <div>
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" class="form-control" required>
+                    <input type="password" name="password" id="password" class="form-control">
                 </div>
                 <div>
                     <label for="phone" class="form-label">Phone</label>
-                    <input type="text" name="phone" id="phone" class="form-control" required>
+                    <input type="text" name="phone" id="phone" class="form-control">
                 </div>
                 <div>
                     <label for="address" class="form-label">Address</label>
-                   <textarea name="address" id="address" class="form-control"></textarea>
+                   <textarea name="address" id="address" class="form-control" required></textarea>
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary form-control">Register</button>
