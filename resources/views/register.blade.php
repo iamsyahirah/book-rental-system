@@ -34,6 +34,13 @@
      </ul>
     </div>
        @endif
+
+       @if (session('status'))
+            <div class="alert alert-success">
+             {{ session('message')}}
+            </div>
+       @endif
+       
         <div class="register-box">
             <form action="" method="post">
                 @csrf

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
@@ -67,6 +69,20 @@ class AuthController extends Controller
             'address' => 'required',
         ]);
 
-        dd($validated);
+        // Hash the password and merge it into the request data
+        $request['password'] = Hash::make($request->password);
+        //$request->merge(['password' => Hash::make($request->password)]);
+
+        // Create the user with the validated data
+        $user = User::create($request->all());
+
+        // Flash success message to the session
+        Session::flash('status', 'success');
+        Session::flash('message', 'Registration successful. 
+        Please wait for admin approval.');
+
+        // Redirect back to the register page
+        return redirect('register');
+
     }
 }
