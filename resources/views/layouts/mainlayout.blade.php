@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rental Book System | @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <style>
     .main {
@@ -16,17 +17,21 @@
       color: #fff;
     }
 
-    .sidebar ul {
-      list-style: none;
-    }
-
-    .sidebar li {
-      padding: 15px;
-    }
-
     .sidebar a {
       color: #fff;
       text-decoration: none; 
+      display: block;
+      padding: 10px 20px;
+      padding-top: 30px;
+    }
+
+    .sidebar a:hover {
+      background: #4a49ab;
+      border-radius: 10px;
+    }
+
+    .icon-spacing {
+       margin-right: 15px;
     }
 
     .content {
@@ -48,19 +53,26 @@
   <div class="body-content h-100">
     <div class="row g-0 h-100">
       <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSidebar">
-        <ul>
           @if (Auth::user()->role_id == 1)
-          <li>Dashboard</li>
-          <li>Books</li>
-          <li>Categories</li>
-          <li>Users</li>
-          <li>Rent Log</li>
-          <li>Logout</li>
+          <a href="dashboard">
+            <i class="fa-solid fa-gauge icon-spacing"></i></i>Dashboard</a>
+          <a href="books">
+            <i class="fa-solid fa-book icon-spacing"></i>Books</a>
+          <a href="#">
+           <i class="fa-solid fa-layer-group icon-spacing"></i>Categories</a>
+          <a href="#">
+            <i class="fa-solid fa-user icon-spacing"></i>Users</a>
+          <a href="#">
+            <i class="fa-solid fa-list icon-spacing"></i>Rent Log</a>
+          <a href="logout">
+            <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @else
-           <li>Profile</li>
-          <li>Logout</li>
+          <a href="profile">
+            <i class="fa-solid fa-user icon-spacing"></i>Profile</a>
+          <a href="logout">
+            <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @endif
-        </ul>
+        
       </div>
       <div class="content p-5 col-lg-10">
          @yield('content')
