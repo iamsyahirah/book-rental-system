@@ -3,5 +3,55 @@
 @section('title','Dashboard')
 
 @section('content')
-   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur exercitationem perferendis autem est maiores aut. Rerum hic, veritatis, aperiam quod qui voluptas ullam a quaerat consectetur enim accusantium debitis porro quae fugit temporibus deserunt repudiandae incidunt id maxime magni molestias cum earum inventore animi. Nihil eligendi libero tempore officiis, sequi corrupti nemo at doloribus. Quod praesentium ullam animi exercitationem laboriosam iusto dicta eum ab explicabo, quam magni numquam voluptatum? Atque officia, at eaque iusto vero consectetur libero exercitationem, provident enim ut nisi sint repellendus inventore eligendi. Blanditiis eum rerum recusandae odio commodi quasi suscipit earum similique sunt. Laborum, praesentium nostrum.</p>
+
+   <h1>Welcome, {{Auth::user()->username}}</h1>
+
+   <div class="row mt-5">
+      <div class="col-lg-4">
+         <div class="card-data book shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <div class="row">
+               <div class="col-6">
+                 <i class="bi bi-journal-bookmark"></i>
+               </div>
+               <div class="col-6 d-flex flex-column justify-content-center align-items-end">
+                  <div class="card-desc">Books</div>
+                  <div class="card-count">100</div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+        <div class="col-lg-4">
+         <div class="card-data cat shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <div class="row">
+               <div class="col-6">
+                 <i class="bi bi-list-ul"></i>
+               </div>
+               <div class="col-6 d-flex flex-column justify-content-center align-items-end">
+                  <div class="card-desc">Categories</div>
+                  <div class="card-count">45</div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+        <div class="col-lg-4">
+         <div class="card-data user shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+            <div class="row">
+               <div class="col-6">
+                 <i class="bi bi-people"></i>
+               </div>
+               <div class="col-6 d-flex flex-column justify-content-center align-items-end">
+                  <div class="card-desc">Users</div>
+                  <div class="card-count">190</div>
+               </div>
+            </div>
+         </div>
+      </div>
+    
+      
+   </div>
+
+      
+    
 @endsection

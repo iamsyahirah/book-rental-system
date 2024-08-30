@@ -5,46 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Rental Book System | @yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href={{asset('css/style.css')}} rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <style>
-    .main {
-        height: 100vh;
-    }
-
-    .sidebar {
-      background:#232227 ;
-      color: #fff;
-    }
-
-    .sidebar a {
-      color: #fff;
-      text-decoration: none; 
-      display: block;
-      padding: 10px 20px;
-      padding-top: 30px;
-    }
-
-    .sidebar a:hover {
-      background: #4a49ab;
-      border-radius: 10px;
-    }
-
-    .active {
-      background: #4a49ab;
-      border-right: solid 10px orange;
-    }
-
-    .icon-spacing {
-       margin-right: 15px;
-    }
-
-    .content {
-      background: #f3f7ff;
-    }
-
- 
-  </style>
+  
   <body>
     <div class="main d-flex flex-column justify-content-between">
         <nav class="navbar navbar-expand-lg bg-light shadow-lg p-3 bg-body rounded">
