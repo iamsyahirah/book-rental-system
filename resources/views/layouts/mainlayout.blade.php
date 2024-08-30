@@ -58,11 +58,11 @@
             <i class="fa-solid fa-gauge icon-spacing"></i></i>Dashboard</a>
           <a href="books">
             <i class="fa-solid fa-book icon-spacing"></i>Books</a>
-          <a href="#">
+          <a href="categories">
            <i class="fa-solid fa-layer-group icon-spacing"></i>Categories</a>
-          <a href="#">
+          <a href="users">
             <i class="fa-solid fa-user icon-spacing"></i>Users</a>
-          <a href="#">
+          <a href="rent-logs">
             <i class="fa-solid fa-list icon-spacing"></i>Rent Log</a>
           <a href="logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
