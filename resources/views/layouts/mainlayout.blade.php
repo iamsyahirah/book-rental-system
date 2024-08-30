@@ -30,6 +30,11 @@
       border-radius: 10px;
     }
 
+    .active {
+      background: #4a49ab;
+      border-right: solid 10px orange;
+    }
+
     .icon-spacing {
        margin-right: 15px;
     }
@@ -37,6 +42,8 @@
     .content {
       background: #f3f7ff;
     }
+
+ 
   </style>
   <body>
     <div class="main d-flex flex-column justify-content-between">
@@ -54,20 +61,33 @@
     <div class="row g-0 h-100">
       <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSidebar">
           @if (Auth::user()->role_id == 1)
-          <a href="dashboard">
-            <i class="fa-solid fa-gauge icon-spacing"></i></i>Dashboard</a>
-          <a href="books">
+          <a href="dashboard" 
+          @if(request()->route()->uri == 'dashboard') class="active" 
+          @endif>
+            <i class="fa-solid fa-gauge icon-spacing"></i></i>
+            Dashboard</a>
+          <a href="books"
+          @if(request()->route()->uri == 'books') class="active" 
+          @endif>
             <i class="fa-solid fa-book icon-spacing"></i>Books</a>
-          <a href="categories">
+          <a href="categories"
+          @if(request()->route()->uri == 'categories') class="active" 
+          @endif>
            <i class="fa-solid fa-layer-group icon-spacing"></i>Categories</a>
-          <a href="users">
+          <a href="users"
+          @if(request()->route()->uri == 'users') class="active" 
+          @endif>
             <i class="fa-solid fa-user icon-spacing"></i>Users</a>
-          <a href="rent-logs">
+          <a href="rent-logs"
+          @if(request()->route()->uri == 'rent-logs') class="active" 
+          @endif>
             <i class="fa-solid fa-list icon-spacing"></i>Rent Log</a>
           <a href="logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @else
-          <a href="profile">
+          <a href="profile"
+          @if(request()->route()->uri == 'profile') class="active" 
+          @endif>
             <i class="fa-solid fa-user icon-spacing"></i>Profile</a>
           <a href="logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
