@@ -5,6 +5,16 @@
 @section('content')
   <h1>Add New Category</h1>
 
+  @if ($errors->any())
+  <div class="alert alert-danger">
+    <ul>
+      @foreach ($errors->all() as $error)
+      <li>{{ $error }}</li>
+      @endforeach
+    </ul>
+  </div>
+  @endif
+
   <div class="mt-5 w-50">
     <form action="category-add" method="post">
       @csrf
