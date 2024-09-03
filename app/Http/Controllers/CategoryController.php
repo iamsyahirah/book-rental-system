@@ -57,6 +57,11 @@ class CategoryController extends Controller
         $category = Category::where('slug', $slug)->first();
         $category->delete();
         return redirect('categories')->with('status', 'Category Deleted Successfully');
+    }
 
+    public function deleteCategory()
+    {
+        $deletedCategories = Category::onlyTrashed()->get();
+        return view('category-deleted-list', ['deletedCategories' => $deletedCategories]);
     }
 }
