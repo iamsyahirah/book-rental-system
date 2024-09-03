@@ -26,6 +26,7 @@
 
       <div class="mt-3">
         <button class="btn btn-success" type="submit">Update</button>
+        <a href="/categories" class="btn btn-primary">Cancel</a>
       </div>
     </form>
   </div>

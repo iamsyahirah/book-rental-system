@@ -36,7 +36,7 @@
           @endif>
             <i class="fa-solid fa-book icon-spacing"></i>Books</a>
           <a href="categories"
-          @if(request()->route()->uri == 'categories') class="active" 
+          @if(request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}' ) class="active" 
           @endif>
            <i class="fa-solid fa-layer-group icon-spacing"></i>Categories</a>
           <a href="users"
