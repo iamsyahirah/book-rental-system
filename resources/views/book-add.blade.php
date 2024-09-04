@@ -20,12 +20,12 @@
       @csrf
       <div class="mb-3" enctype="multipart/form-data">
         <label for="book_code" class="form-label">Code</label>
-        <input type="text" name="book_code" id="book_code" class="form-control" placeholder="Book Code">
+        <input type="text" name="book_code" id="book_code" class="form-control" placeholder="Book Code" value="{{ old('book_code')}}">
       </div>
 
        <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Book Title">
+        <input type="text" name="title" id="title" class="form-control" placeholder="Book Title" value="{{ old('title')}}">
       </div>
 
        <div class="mb-3">
