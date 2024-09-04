@@ -7,7 +7,7 @@
 
   <div class="mt-5 d-flex justify-content-end">
     <a href="category-deleted" class="btn btn-warning me-3">View Deleted Data</a>
-    <a href="category-add" class="btn btn-success">Add Data</a>
+    <a href="book-add" class="btn btn-success">Add Book</a>
   </div>
 
   <div class="mt-5">
