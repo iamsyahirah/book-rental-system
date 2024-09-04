@@ -19,8 +19,8 @@
     <form action="book-add" method="post">
       @csrf
       <div class="mb-3" enctype="multipart/form-data">
-        <label for="code" class="form-label">Code</label>
-        <input type="text" name="code" id="code" class="form-control" placeholder="Book Code">
+        <label for="book_code" class="form-label">Code</label>
+        <input type="text" name="book_code" id="book_code" class="form-control" placeholder="Book Code">
       </div>
 
        <div class="mb-3">
