@@ -33,6 +33,16 @@
         <input type="file" name="image" class="form-control">
       </div>
 
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select name="categories" id="category" class="form-control">
+          <option value="">Choose Category</option>
+         @foreach ($categories as $item)
+         <option value="{{ $item->id }}">{{ $item->name }}</option>
+         @endforeach
+        </select>
+      </div>
+
 
       <div class="mt-3">
         <button class="btn btn-success" type="submit">Save</button>
