@@ -39,4 +39,12 @@ class BookController extends Controller
         $book->categories()->sync($request->categories);
         return redirect('books')->with('status', 'Book Added Successfully');
     }
+
+    public function edit($slug)
+    {
+        $book = Book::where('slug', $slug)->first();
+        $categories = Category::all();
+        return view('book-edit', ['categories' => $categories, 'book' => $book]);
+    }
+
 }
