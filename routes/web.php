@@ -43,7 +43,7 @@ Route::middleware('auth')->group(function () {
     Route::post('book-add', [BookController::class, 'store']);
 
     Route::get('book-edit/{slug}', [BookController::class, 'edit']);
-    Route::get('book-edit/{slug}', [BookController::class, 'update']);
+    Route::post('book-edit/{slug}', [BookController::class, 'update']);
 
     Route::get('categories', [CategoryController::class, 'index']);
     Route::get('category-add', [CategoryController::class, 'add']);
