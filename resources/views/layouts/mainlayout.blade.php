@@ -26,35 +26,35 @@
     <div class="row g-0 h-100">
       <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSidebar">
           @if (Auth::user()->role_id == 1)
-          <a href="dashboard" 
+          <a href="/dashboard" 
           @if(request()->route()->uri == 'dashboard') class="active" 
           @endif>
             <i class="fa-solid fa-gauge icon-spacing"></i></i>
             Dashboard</a>
-          <a href="books"
-          @if(request()->route()->uri == 'books') class="active" 
+          <a href="/books"
+          @if(request()->route()->uri == 'books' || request()->route()->uri == 'book-add' || request()->route()->uri == 'book-deleted' || request()->route()->uri == 'book-edit/{slug}' || request()->route()->uri == 'book-delete/{slug}') class="active"
           @endif>
             <i class="fa-solid fa-book icon-spacing"></i>Books</a>
-          <a href="categories"
+          <a href="/categories"
           @if(request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}' ) class="active" 
           @endif>
            <i class="fa-solid fa-layer-group icon-spacing"></i>Categories</a>
-          <a href="users"
+          <a href="/users"
           @if(request()->route()->uri == 'users') class="active" 
           @endif>
             <i class="fa-solid fa-user icon-spacing"></i>Users</a>
-          <a href="rent-logs"
+          <a href="/rent-logs"
           @if(request()->route()->uri == 'rent-logs') class="active" 
           @endif>
             <i class="fa-solid fa-list icon-spacing"></i>Rent Log</a>
-          <a href="logout">
+          <a href="/logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @else
-          <a href="profile"
+          <a href="/profile"
           @if(request()->route()->uri == 'profile') class="active" 
           @endif>
             <i class="fa-solid fa-user icon-spacing"></i>Profile</a>
-          <a href="logout">
+          <a href="/logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @endif
         
