@@ -6,7 +6,7 @@
  <h1>Book List</h1>
 
   <div class="mt-5 d-flex justify-content-end">
-    <a href="category-deleted" class="btn btn-warning me-3">View Deleted Data</a>
+    <a href="book-deleted" class="btn btn-warning me-3">View Deleted Data</a>
     <a href="book-add" class="btn btn-success">Add Book</a>
   </div>
 
