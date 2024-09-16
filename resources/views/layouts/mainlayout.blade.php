@@ -40,7 +40,7 @@
           @endif>
            <i class="fa-solid fa-layer-group icon-spacing"></i>Categories</a>
           <a href="/users"
-          @if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}') class="active" 
+          @if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}') class="active" 
           @endif>
             <i class="fa-solid fa-user icon-spacing"></i>Users</a>
           <a href="/rent-logs"

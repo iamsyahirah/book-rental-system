@@ -2,14 +2,20 @@
 
 @section('title','User')
 
-@section('page-name','User')
-
 @section('content')
   <h1>User List</h1>
 
    <div class="mt-5 d-flex justify-content-end">
     <a href="category-deleted" class="btn btn-warning me-3">View Banned User</a>
     <a href="/registered-users" class="btn btn-success">New Registered User</a>
+  </div>
+
+   <div class="mt-5">
+    @if (session('status'))
+    <div class="alert alert-success">
+      {{ session('status')}}
+    </div>
+    @endif
   </div>
 
   <div class="my-5">
@@ -36,7 +42,7 @@
           </td>
           <td>
             <a href="/user-detail/{{ $item->slug }}">Details</a>
-            <a href="">BAN</a>
+            <a href="/user-ban/{{$item->slug}}">BAN</a>
           </td>
         </tr>
         @endforeach
