@@ -35,7 +35,7 @@
             @endif
           </td>
           <td>
-            <a href="">Details</a>
+            <a href="/user-detail/{{ $item->slug }}">Details</a>
             <a href="">BAN</a>
           </td>
         </tr>
