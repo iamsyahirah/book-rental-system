@@ -25,6 +25,7 @@
   <div class="body-content h-100">
     <div class="row g-0 h-100">
       <div class="sidebar col-lg-2 collapse d-lg-block" id="navbarSidebar">
+        @if (Auth::user())
           @if (Auth::user()->role_id == 1)
           <a href="/dashboard" 
           @if(request()->route()->uri == 'dashboard') class="active" 
@@ -57,6 +58,9 @@
           <a href="/logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @endif
+        @else
+              <a href="/login"><i class="fa-solid fa-right-from-bracket icon-spacing"></i>Login</a>
+        @endif
         
       </div>
       <div class="content p-5 col-lg-10">
