@@ -40,6 +40,7 @@
           @if(request()->route()->uri == 'categories' || request()->route()->uri == 'category-add' || request()->route()->uri == 'category-deleted' || request()->route()->uri == 'category-edit/{slug}' || request()->route()->uri == 'category-delete/{slug}' ) class="active" 
           @endif>
            <i class="fa-solid fa-layer-group icon-spacing"></i>Categories</a>
+            <a href="/" @if(request()->route()->uri == '/') class="active"  @endif><i class="fa-solid icon-spacing fa-book"></i>Book List</a>
           <a href="/users"
           @if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active" 
           @endif>
@@ -55,7 +56,8 @@
           @if(request()->route()->uri == 'profile') class="active" 
           @endif>
             <i class="fa-solid fa-user icon-spacing"></i>Profile</a>
-          <a href="/logout">
+            <a href="/" @if(request()->route()->uri == '/') class="active"  @endif><i class="fa-solid icon-spacing fa-book"></i>Book List</a>
+            <a href="/logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @endif
         @else
