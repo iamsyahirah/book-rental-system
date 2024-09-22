@@ -8,11 +8,20 @@
 
 <div class="col-12 col-md-8 offset-md-2 col-lg-6 offset-md-3">
     <h1>Book Rent Form</h1>
+
+    <div class="mt-5">
+        @if (session('message'))
+        <div class="alert {{session('alert-class')}}">
+            {{ session('message') }}
+        </div>
+        @endif
+    </div>
+
     <form action="book-rent" method="post">
         @csrf
         <div class="mb-3">
             <label for="user" class="form-label">User</label>
-            <select name="user" id="user" class="form-control inputbox">
+            <select name="user_id" id="user" class="form-control inputbox">
                 <option value="">Select User</option>
                 @foreach ($users as $item)
                 <option value="{{ $item->id }}">{{ $item->username }}</option>
@@ -21,7 +30,7 @@
         </div>
          <div class="mb-3">
             <label for="book" class="form-label">Book</label>
-            <select name="book" id="book" class="form-control inputbox">
+            <select name="book_id" id="book" class="form-control inputbox">
                 <option value="">Select Book</option>
                 @foreach ($books as $item)
                 <option value="{{ $item->id }}">{{ $item->title }}</option>
