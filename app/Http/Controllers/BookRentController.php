@@ -8,6 +8,6 @@ class BookRentController extends Controller
 {
     public function index()
     {
-        return 'test';
+        return view('book-rent');
     }
 }
