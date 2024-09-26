@@ -20,14 +20,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Amirul</td>
-          <td>CSS for Noob</td>
-          <td>2022-10-1</td>
-          <td>2022-10-4</td>
-          <td>2022-10-5</td>
-        </tr>
+       @foreach ($rent_logs as $item)
+       <tr class="{{ $item->actual_return_date == null ? '' : ($item->return_date < $item->actual_return_date ? 'text-bg-danger' : 'text-bg-success')}}">
+          <td>{{ $loop->iteration }}</td>
+          <td>{{ $item->user->username }}</td>
+          <td>{{ $item->book->title }}</td>
+          <td>{{ $item->rent_date }}</td>
+          <td>{{ $item->return_date }}</td>
+          <td>{{ $item->actual_return_date }}</td>
+       </tr>
+       @endforeach
       </tbody>
     </table>
   </div>

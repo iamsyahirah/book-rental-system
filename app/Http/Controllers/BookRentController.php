@@ -21,39 +21,45 @@ class BookRentController extends Controller
 
     public function store(Request $request)
     {
-        $request['rent-date'] = Carbon::now()->toDateString();
-        $request['return_date'] = Carbon::now()->addDay(3)->toDateString();
+        // set and merge the correct rent and return dates in the request
+        $request['rent_date'] = Carbon::now()->toDateString();
+        $request['return_date'] = Carbon::now()->addDays(3)->toDateString();
 
-        $book = Book::findOrFail($request->book_id)->only('status');
+        $book = Book::findOrFail($request->book_id)->only(['status']);
 
         if ($book['status'] != 'in stock') {
             Session::flash('message', 'Cannot rent, the book is not available');
             Session::flash('alert-class', 'alert-danger');
             return redirect('book-rent');
+
         } else {
-            try {
-                DB::beginTransaction();
-                //process insert to rent_logs table
-                RentLogs::create($request->all());
-                //process update book table
-                $book = Book::findOrFail($request->book_id);
-                $book->status = 'not available';
-                $book->save();
-                DB::commit();
+            $count = RentLogs::where('user_id', $request->user_id)->where('actual_return_date', null)->count();
 
-                Session::flash('message', 'Rent Book Success');
-                Session::flash('alert-class', 'alert-success');
+            if ($count >= 3) {
+                Session::flash('message', 'Cannot rent, user have reach the limit.');
+                Session::flash('alert-class', 'alert-danger');
                 return redirect('book-rent');
+            } else {
+                try {
+                    DB::beginTransaction();
+                    //process insert to rent_logs table
+                    RentLogs::create($request->all());
+                    //process update book table
+                    $book = Book::findOrFail($request->book_id);
+                    $book->status = 'not available';
+                    $book->save();
+                    DB::commit();
 
-            } catch (\Throwable $th) {
-                DB::rollBack();
-                dd($th);
+                    Session::flash('message', 'Rent Book Success');
+                    Session::flash('alert-class', 'alert-success');
+                    return redirect('book-rent');
+
+                } catch (\Throwable $th) {
+                    DB::rollBack();
+                    dd($th);
+                }
+
             }
-
         }
-
-
-
-
     }
 }
