@@ -47,7 +47,7 @@
           @if(request()->route()->uri == 'rent-logs') class="active" 
           @endif>
             <i class="fa-solid fa-list icon-spacing"></i>Rent Log</a>
-          <a href="#"
+          <a href="book-return"
           @if(request()->route()->uri == 'book-return') class="active" 
           @endif>
             <i class="fa-solid fa-list icon-spacing"></i>Book Return</a>
