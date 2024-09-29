@@ -8,8 +8,8 @@
   <h1>Rent Log List</h1>
 
   <div class="mt-5">
-    <h2>User's Rent Log</h2>
-    <x-rent-log-table :dashboard='$rent_logs' />
+    <h3>User's Rent Log</h3>
+    <x-rent-log-table :rentlog='$rent_logs' />
   </div>
 
 @endsection
