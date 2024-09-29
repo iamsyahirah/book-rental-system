@@ -39,10 +39,6 @@
 
           <a href="/book-rent" @if(request()->route()->uri == 'book-rent') class="active"  @endif><i class="fa-solid fa-swatchbook icon-spacing"></i>Book Rent</a>
 
-          <a href="/users"
-          @if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active" 
-          @endif>
-            <i class="fa-solid fa-user icon-spacing"></i>Users</a>
           <a href="/rent-logs"
           @if(request()->route()->uri == 'rent-logs') class="active" 
           @endif>
@@ -50,7 +46,13 @@
           <a href="/book-return"
           @if(request()->route()->uri == 'book-return') class="active" 
           @endif>
-            <i class="fa-solid fa-list icon-spacing"></i>Book Return</a>
+           <i class="fa-solid fa-rotate-left icon-spacing"></i>Book Return</a>
+
+           <a href="/users"
+          @if(request()->route()->uri == 'users' || request()->route()->uri == 'registered-users' || request()->route()->uri == 'user-detail/{slug}' || request()->route()->uri == 'user-ban/{slug}' || request()->route()->uri == 'user-banned') class="active" 
+          @endif>
+            <i class="fa-solid fa-user icon-spacing"></i>Users</a>
+            
           <a href="/logout">
             <i class="fa-solid fa-right-from-bracket icon-spacing"></i>Logout</a>
           @else

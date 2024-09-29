@@ -51,9 +51,13 @@
    </div>
 
    <div class="mt-5">
-      <h2>#Rent Log</h2>
+      <h2>Rent Log</h2>
 
-      <table class="table">
+      <div class="mt-5">
+         <x-rent-log-table :rentlog='$rent_logs' />
+      </div>
+
+      {{-- <table class="table">
          <thead>
             <tr>
                <th>No.</th>
@@ -70,7 +74,7 @@
                <td colspan="7" style="text-align: center">No data</td>
             </tr>
          </tbody>
-      </table>
+      </table> --}}
    </div>
 
       
